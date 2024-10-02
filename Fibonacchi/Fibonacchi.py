@@ -1,4 +1,4 @@
-def caching_fibonacci(n, cache={}):
+def caching_fibonacci(cache={}):
 
     def fibonacci(n):
         if n <= 0:
@@ -8,8 +8,8 @@ def caching_fibonacci(n, cache={}):
         else:
             cache[n] = fibonacci(n - 1) + fibonacci(n - 2)
         return cache[n]
+    return fibonacci
 
-    return fibonacci(n)
 
-
-print(caching_fibonacci(10))
+fib = caching_fibonacci()
+print(fib(10))
